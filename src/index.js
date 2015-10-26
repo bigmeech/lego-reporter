@@ -4,7 +4,6 @@
 
 
 
-var figlet = require('figlet');
 module.exports = function LegoReporter(runner) {
     var passes = 0;
     var fails = 0;
@@ -12,15 +11,7 @@ module.exports = function LegoReporter(runner) {
     var passedtests = [];
 
     var displayTestResults = function(test) {
-        console.log("LEGO TEST Result");
-        if(passedtests.length > 0){
-            console.log("Number of Passed Test:", passedtests.length);
-        }
-
-        if(failedTest.length > 0){
-            console.log("Number of Failed Test:", failedTest.length);
-        }
-
+        console.log("passed: "+ passedtests.length, "failed: " + failedTest.length);
         process.exit(fails);
 
     };
